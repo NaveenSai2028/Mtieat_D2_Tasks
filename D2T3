@@ -1,0 +1,38 @@
+// parent class
+class Bank {
+    // method returning default interest rate
+    double getInterestRate() {
+        return 0.0;
+    }
+}
+
+// child class SBI
+class SBI extends Bank {
+    // overriding interest rate for SBI
+    @Override
+    double getInterestRate() {
+        return 6.5;
+    }
+}
+
+// child class HDFC
+class HDFC extends Bank {
+    // overriding interest rate for HDFC
+    @Override
+    double getInterestRate() {
+        return 7.0;
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating objects
+        SBI sbi = new SBI();
+        HDFC hdfc = new HDFC();
+
+        // printing interest rates
+        System.out.println("SBI Interest Rate: " + sbi.getInterestRate());
+        System.out.println("HDFC Interest Rate: " + hdfc.getInterestRate());
+    }
+}

@@ -1,0 +1,38 @@
+// interface Printable
+interface Printable {
+    // method to print document
+    void printDocument();
+}
+
+// interface Scannable
+interface Scannable {
+    // method to scan document
+    void scanDocument();
+}
+
+// SmartPrinter implementing both interfaces
+class SmartPrinter implements Printable, Scannable {
+    // implementing printDocument method
+    @Override
+    public void printDocument() {
+        System.out.println("Printing document...");
+    }
+
+    // implementing scanDocument method
+    @Override
+    public void scanDocument() {
+        System.out.println("Scanning document...");
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating SmartPrinter object
+        SmartPrinter sp = new SmartPrinter();
+
+        // calling both methods
+        sp.printDocument();
+        sp.scanDocument();
+    }
+}

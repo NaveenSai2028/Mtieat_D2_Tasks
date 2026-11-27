@@ -1,0 +1,12 @@
+// abstract parent class
+abstract class Appliance {
+    // concrete method
+    void plugIn() {
+        System.out.println("Appliance plugged into power");
+    }
+
+    // abstract method
+    abstract void operate();
+}
+
+// subclass Fan extending Appliance

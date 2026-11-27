@@ -1,0 +1,31 @@
+// abstract parent class
+abstract class Animal {
+    // abstract method
+    abstract void makeSound();
+
+    // concrete method
+    void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}
+
+// subclass Dog extending Animal
+class Dog extends Animal {
+    // overriding makeSound method
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks: Woof! Woof!");
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating Dog object
+        Dog d = new Dog();
+
+        // calling both methods
+        d.makeSound();
+        d.sleep();
+    }
+}

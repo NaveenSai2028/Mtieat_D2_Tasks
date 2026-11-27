@@ -1,0 +1,28 @@
+// class Car
+class Car {
+    String brand;
+    int year;
+
+    // no-argument constructor
+    Car() {
+        brand = "Toyota";
+        year = 2024;
+    }
+
+    // method to print car details
+    void displayDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Year: " + year);
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating Car object
+        Car c = new Car();
+
+        // calling displayDetails method
+        c.displayDetails();
+    }
+}

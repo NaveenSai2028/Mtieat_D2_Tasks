@@ -1,0 +1,33 @@
+class Book {
+    int bookId;
+    String title;
+    String author;
+
+    Book() {
+        this(0, "Untitled", "Unknown Author");
+    }
+
+    Book(int bookId, String title) {
+        this(bookId, title, "Unknown Author");
+    }
+
+    Book(int bookId, String title, String author) {
+        this.bookId = bookId;
+        this.title = title;
+        this.author = author;
+    }
+
+    void displayBook() {
+        System.out.println("Book ID: " + bookId + " | Title: " + title + " | Author: " + author);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Book b1 = new Book(101, "Clean Code");
+        Book b2 = new Book(102, "Effective Java", "Joshua Bloch");
+
+        b1.displayBook();
+        b2.displayBook();
+    }
+}

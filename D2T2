@@ -1,0 +1,31 @@
+// class for printer
+class Printer {
+
+    // method to print string
+    void print(String text) {
+        System.out.println("Text: " + text);
+    }
+
+    // method to print integer
+    void print(int number) {
+        System.out.println("Integer: " + number);
+    }
+
+    // method to print double
+    void print(double decimal) {
+        System.out.println("Decimal: " + decimal);
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating object
+        Printer p = new Printer();
+
+        // calling overloaded methods
+        p.print("Hello Java");
+        p.print(100);
+        p.print(45.75);
+    }
+}

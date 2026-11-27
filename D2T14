@@ -1,0 +1,36 @@
+// interface Shape
+interface Shape {
+    // method to calculate area
+    void calculateArea(double value);
+}
+
+// Square class implementing Shape
+class Square implements Shape {
+    // implementing calculateArea for square
+    @Override
+    public void calculateArea(double side) {
+        System.out.println("Square Area: " + (side * side));
+    }
+}
+
+// Circle class implementing Shape
+class Circle implements Shape {
+    // implementing calculateArea for circle
+    @Override
+    public void calculateArea(double radius) {
+        System.out.println("Circle Area: " + (3.14 * radius * radius));
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating interface references
+        Shape s1 = new Square();
+        Shape s2 = new Circle();
+
+        // calling calculateArea on both
+        s1.calculateArea(5.0);
+        s2.calculateArea(5.0);
+    }
+}

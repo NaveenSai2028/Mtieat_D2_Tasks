@@ -1,0 +1,45 @@
+// interface RemoteControl
+interface RemoteControl {
+    // abstract method
+    void turnOn();
+
+    // default method
+    default void batteryStatus() {
+        System.out.println("Remote battery is 100%");
+    }
+}
+
+// TV class implementing RemoteControl
+class TV implements RemoteControl {
+    // implementing turnOn method
+    @Override
+    public void turnOn() {
+        System.out.println("TV is turned ON");
+    }
+}
+
+// AC class implementing RemoteControl
+class AC implements RemoteControl {
+    // implementing turnOn method
+    @Override
+    public void turnOn() {
+        System.out.println("AC is turned ON");
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating interface references
+        RemoteControl r1 = new TV();
+        RemoteControl r2 = new AC();
+
+        // calling methods on TV
+        r1.turnOn();
+        r1.batteryStatus();
+
+        // calling methods on AC
+        r2.turnOn();
+        r2.batteryStatus();
+    }
+}

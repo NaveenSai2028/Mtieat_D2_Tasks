@@ -1,0 +1,36 @@
+// class Employee
+class Employee {
+    int id;
+    String name;
+    String department;
+
+    // constructor with two arguments calling main constructor
+    Employee(int id, String name) {
+        this(id, name, "General");
+    }
+
+    // constructor initializing all three fields
+    Employee(int id, String name, String department) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+    }
+
+    // method to print employee details
+    void displayEmployee() {
+        System.out.println("ID: " + id + ", Name: " + name + ", Department: " + department);
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating two Employee objects
+        Employee e1 = new Employee(101, "Naveen");
+        Employee e2 = new Employee(102, "Likhith", "AI&DS");
+
+        // calling displayEmployee on both
+        e1.displayEmployee();
+        e2.displayEmployee();
+    }
+}

@@ -1,0 +1,36 @@
+// interface Notification
+interface Notification {
+    // abstract method
+    void sendNotification();
+}
+
+// class implementing Notification for email
+class EmailNotification implements Notification {
+    // implementing sendNotification method
+    @Override
+    public void sendNotification() {
+        System.out.println("Sending notification via Email");
+    }
+}
+
+// class implementing Notification for SMS
+class SMSNotification implements Notification {
+    // implementing sendNotification method
+    @Override
+    public void sendNotification() {
+        System.out.println("Sending notification via SMS");
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating interface references
+        Notification n1 = new EmailNotification();
+        Notification n2 = new SMSNotification();
+
+        // calling sendNotification on both
+        n1.sendNotification();
+        n2.sendNotification();
+    }
+}

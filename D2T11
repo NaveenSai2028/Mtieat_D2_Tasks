@@ -1,0 +1,46 @@
+// abstract parent class
+abstract class Employee {
+    String name;
+
+    // constructor to initialize name
+    Employee(String name) {
+        this.name = name;
+    }
+
+    // concrete method
+    void showName() {
+        System.out.println("Employee: " + name);
+    }
+
+    // abstract method
+    abstract void calculateSalary();
+}
+
+// subclass FullTimeEmployee extending Employee
+class FullTimeEmployee extends Employee {
+    double monthlySalary;
+
+    // constructor passing name to parent class
+    FullTimeEmployee(String name, double monthlySalary) {
+        super(name);
+        this.monthlySalary = monthlySalary;
+    }
+
+    // overriding calculateSalary method
+    @Override
+    void calculateSalary() {
+        System.out.println("Monthly Salary: ₹" + monthlySalary);
+    }
+}
+
+// main class
+public class Main {
+    public static void main(String[] args) {
+        // creating FullTimeEmployee object
+        FullTimeEmployee emp = new FullTimeEmployee("Naveen", 45000);
+
+        // calling both methods
+        emp.showName();
+        emp.calculateSalary();
+    }
+}

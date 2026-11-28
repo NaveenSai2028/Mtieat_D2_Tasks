@@ -1,0 +1,105 @@
+// Task 5: UserRegistration
+class UserRegistration {
+    public void register(String name, int userId) {
+        System.out.println("Registered user: " + name + " with ID: " + userId);
+    }
+
+    public void register(int userId, String name) {
+        System.out.println("Registered ID: " + userId + " for user: " + name);
+    }
+}
+
+// Task 6: Book
+class Book {
+    String title;
+    double price;
+
+    public Book() {
+        this.title = "Unknown";
+        this.price = 0.0;
+    }
+
+    public Book(String title) {
+        this.title = title;
+        this.price = 0.0;
+    }
+
+    public Book(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    public void display() {
+        System.out.println("Title: " + title + ", Price: " + price);
+    }
+}
+
+// Task 7: Employee and SalesEmployee
+class Employee {
+    double baseSalary;
+
+    public double calculateSalary() {
+        return baseSalary;
+    }
+}
+
+class SalesEmployee extends Employee {
+    double bonus;
+
+    @Override
+    public double calculateSalary() {
+        return super.calculateSalary() + bonus;
+    }
+}
+
+// Task 8: Payment, CreditCard, and UPI
+class Payment {
+    public void pay(double amount) {
+        System.out.println("Processing generic payment of ₹" + amount);
+    }
+}
+
+class CreditCard extends Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " via Credit Card");
+    }
+}
+
+class UPI extends Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " via UPI");
+    }
+}
+
+// Main class to test Tasks 5, 6, 7, and 8
+public class Main {
+    public static void main(String[] args) {
+        // Test Task 5
+        UserRegistration reg = new UserRegistration();
+        reg.register("Alice", 101);
+        reg.register(102, "Bob");
+
+        // Test Task 6
+        Book b1 = new Book();
+        Book b2 = new Book("Java Programming");
+        Book b3 = new Book("Data Structures", 499.99);
+        b1.display();
+        b2.display();
+        b3.display();
+
+        // Test Task 7
+        SalesEmployee emp = new SalesEmployee();
+        emp.baseSalary = 50000.0;
+        emp.bonus = 10000.0;
+        System.out.println("Total Calculated Salary: " + emp.calculateSalary());
+
+        // Test Task 8
+        Payment[] payments = { new CreditCard(), new UPI() };
+        for (Payment p : payments) {
+            p.pay(500.0);
+        }
+    }
+}
+```[cite: 25]
